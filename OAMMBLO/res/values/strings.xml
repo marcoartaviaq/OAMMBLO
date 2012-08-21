@@ -9,5 +9,9 @@
     <string name="r_userLabel">Usuario</string>
     <string name="r_loginTittleLabel">Autenticación de Twitter</string>
     <string name="r_loginButton">Login</string>
+    <string name="title_activity_time_line">TimeLineActivity</string>
+    <string name="r_timelineLabel">Timeline Twitter</string>
+    <string name="r_tweetLabel">Tweet</string>
+    <string name="r_buttonSendTweet">Enviar</string>
 
 </resources>
