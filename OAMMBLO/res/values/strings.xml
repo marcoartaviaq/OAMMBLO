@@ -13,5 +13,6 @@
     <string name="r_timelineLabel">Timeline Twitter</string>
     <string name="r_tweetLabel">Tweet</string>
     <string name="r_buttonSendTweet">Enviar</string>
+    <string name = "usernameHint">Digite el usuario</string>
 
 </resources>

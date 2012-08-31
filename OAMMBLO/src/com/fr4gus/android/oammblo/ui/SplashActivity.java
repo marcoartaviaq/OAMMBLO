@@ -30,6 +30,7 @@ public class SplashActivity extends OammbloActivity {
     		public void run(){
     			Intent intent = new Intent(SplashActivity.this,LoginActivity.class);
     			startActivity(intent);
+    			finish();
     		}
     		
     	}, 2000);
