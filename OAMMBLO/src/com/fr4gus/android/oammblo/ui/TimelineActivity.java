@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.fr4gus.android.oammblo.R;
 import com.fr4gus.android.oammblo.bo.Tweet;
 import com.fr4gus.android.oammblo.service.TwitterService;
+import com.fr4gus.android.oammblo.service.TwitterServiceException;
 import com.fr4gus.android.oammblo.service.TwitterServiceFactory;
 
 public class TimelineActivity extends Activity {
@@ -41,7 +42,13 @@ public class TimelineActivity extends Activity {
 			@Override
 			protected List<Tweet> doInBackground(Void... params) {
 				TwitterService service = TwitterServiceFactory.getService();
-				List<Tweet> tweets = service.getTimeline();
+				List<Tweet> tweets = null;
+				try {
+					tweets = service.getTimeline();
+				} catch (TwitterServiceException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				return tweets;
 			}
 

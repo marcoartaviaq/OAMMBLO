@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.fr4gus.android.oammblo.R;
 import com.fr4gus.android.oammblo.service.TwitterService;
+import com.fr4gus.android.oammblo.service.TwitterServiceException;
 import com.fr4gus.android.oammblo.service.TwitterServiceFactory;
 
 public class LoginActivity extends Activity {
@@ -48,7 +49,11 @@ public class LoginActivity extends Activity {
 				String username = params[0];
 				String password = params[1];
 
-				boolean result = mService.authenticate(username, password);
+				boolean result = false;
+				try {
+					result = mService.authenticate(username, password);
+				} catch (TwitterServiceException e) {
+				}
 				return result;
 			}
 

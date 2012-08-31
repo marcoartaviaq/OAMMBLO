@@ -17,7 +17,11 @@ public abstract class TwitterService {
 		listeners.remove(listener);
 	}
 
-	public abstract boolean authenticate(String username, String password);
+	public abstract boolean authenticate(String username, String password)
+			throws TwitterServiceException;
 
-	public abstract List<Tweet> getTimeline();
+	public abstract List<Tweet> getTimeline() throws TwitterServiceException;
+
+	public abstract List<Tweet> getPublicTimeline()
+			throws TwitterServiceException;
 }

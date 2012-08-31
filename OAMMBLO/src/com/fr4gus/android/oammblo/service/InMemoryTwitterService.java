@@ -11,13 +11,14 @@ public class InMemoryTwitterService extends TwitterService {
 	public static final String TAG = InMemoryTwitterService.class
 			.getSimpleName();
 
-	private void simulateBlock(){
+	private void simulateBlock() {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException ignore) {
 		}
 
 	}
+
 	public boolean authenticate(String username, String password) {
 		simulateBlock();
 		return true;
@@ -51,6 +52,12 @@ public class InMemoryTwitterService extends TwitterService {
 		tweets.add(new Tweet(new User("003", "Juan P"), "Lorem Ipsum",
 				new Date()));
 		return tweets;
+	}
+
+	@Override
+	public List<Tweet> getPublicTimeline() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
