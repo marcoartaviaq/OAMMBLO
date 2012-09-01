@@ -19,11 +19,13 @@ public class InMemoryTwitterService extends TwitterService {
 
 	}
 
+	@Override
 	public boolean authenticate(String username, String password) {
 		simulateBlock();
 		return true;
 	}
 
+	@Override
 	public List<Tweet> getTimeline() {
 		simulateBlock();
 		List<Tweet> tweets = new ArrayList<Tweet>();

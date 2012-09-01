@@ -37,6 +37,7 @@ public class TimelineActivity extends Activity {
 		mTimeline = (ListView) findViewById(R.id.timeline_list);
 		mTimeline.setAdapter(new TimelineAdapter(this, new ArrayList<Tweet>()));
 
+		
 		AsyncTask<Void, Void, List<Tweet>> task = new AsyncTask<Void, Void, List<Tweet>>() {
 
 			@Override
@@ -46,7 +47,6 @@ public class TimelineActivity extends Activity {
 				try {
 					tweets = service.getTimeline();
 				} catch (TwitterServiceException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				return tweets;
@@ -103,18 +103,22 @@ public class TimelineActivity extends Activity {
 			return TweetType.values().length;
 		}
 
+		@Override
 		public int getCount() {
 			return tweets.size();
 		}
 
+		@Override
 		public Object getItem(int position) {
 			return tweets.get(position);
 		}
 
+		@Override
 		public long getItemId(int position) {
 			return position;
 		}
 
+		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			Tweet tweet = (Tweet) getItem(position);
 

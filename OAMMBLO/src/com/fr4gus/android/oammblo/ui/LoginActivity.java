@@ -28,6 +28,7 @@ public class LoginActivity extends Activity {
 		// mLoginButton = (Button) findViewById(R.id.login_button);
 		mUsername = (EditText) findViewById(R.id.login_username);
 		mPassword = (EditText) findViewById(R.id.login_password);
+		
 		//
 		// mLoginButton.setOnClickListener(new View.OnClickListener() {
 		//
@@ -63,7 +64,7 @@ public class LoginActivity extends Activity {
 				dialog.dismiss();
 				if (result) {
 					startActivity(new Intent(LoginActivity.this,
-							TimelineActivity.class));
+							PublicTimelineActivity.class));
 				} else {
 					Toast.makeText(getApplicationContext(), "Error",
 							Toast.LENGTH_LONG).show();
